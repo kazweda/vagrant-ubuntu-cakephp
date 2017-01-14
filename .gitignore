@@ -1,0 +1,9 @@
+.chef
+.vagrant
+application
+cookbooks
+data_bags
+environments
+nodes
+roles
+sample
