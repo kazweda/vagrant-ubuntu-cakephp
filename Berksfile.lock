@@ -1,0 +1,19 @@
+DEPENDENCIES
+  apt
+  capistrano
+    path: site-cookbooks/capistrano
+  hostsfile
+  jenkins
+    path: site-cookbooks/jenkins
+  phpenv
+    path: site-cookbooks/phpenv
+
+GRAPH
+  apt (5.0.1)
+    compat_resource (>= 12.16.3)
+  capistrano (0.1.0)
+  compat_resource (12.16.3)
+  hostsfile (2.4.5)
+  jenkins (0.1.0)
+  phpenv (0.1.0)
+    hostsfile (>= 0.0.0)
