@@ -23,10 +23,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             :mount_options => ["dmode=775", "fmode=775"]
 
         # provisioning
-        develop.vm.provision :chef_zero do |chef|
+        develop.vm.provision :chef_solo do |chef|
             chef.log_level = "debug"
             chef.cookbooks_path = "./cookbooks"
-            chef.nodes_path = "./cookbooks"
             chef.json = {
                 nginx: {
                     docroot: {
@@ -63,10 +62,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         ci.vm.network "private_network", ip: "192.168.33.100"
 
         # provisioning
-        ci.vm.provision :chef_zero do |chef|
+        ci.vm.provision :chef_solo do |chef|
             chef.log_level = "debug"
             chef.cookbooks_path = "./cookbooks"
-            chef.nodes_path = "./cookbooks"
             chef.json = {
                 nginx: {
                     docroot: {

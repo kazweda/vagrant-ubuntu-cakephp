@@ -7,3 +7,5 @@ environments
 nodes
 roles
 sample
+*.xcf
+*.png
