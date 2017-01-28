@@ -17,10 +17,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         develop.vm.box_url = "https://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-16.04_chef-provisionerless.box"
         develop.vm.network "private_network", ip: "192.168.33.10"
         develop.vm.synced_folder "application", "/var/www/application/current",
-            id: "vagrant-root", :nfs => false,
-            :owner => "vagrant",
-            :group => 'www-data',
-            :mount_options => ["dmode=775", "fmode=775"]
+            id: "vagrant-root",
+            nfs: false,
+            create: true,
+            owner: "vagrant",
+            group: "www-data",
+            mount_options: ["dmode=775", "fmode=775"]
 
         # provisioning
         develop.vm.provision :chef_solo do |chef|
